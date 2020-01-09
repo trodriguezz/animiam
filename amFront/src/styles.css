@@ -1,0 +1,66 @@
+/** GLOBALE **/
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+article {
+   height: calc(100vh - 150px); /* calcule taille de l'écran, moins hauteur du nav) */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+label {
+   font-family: 'Ultra', serif;
+   font-size: 30px;
+}
+
+input {
+   width: 350px;
+   text-align-last: center;
+   font-size: 22px;
+   color: snow;
+   background-color: black;
+   text-align: center;
+}
+
+input[type="submit"] {
+   height: 80px;
+   width: 220px;
+   font-size: 20px;
+   color: snow;
+   background-color: black;
+   font-family: 'Ultra', serif;
+   border-radius: 15px;
+   margin-top: 50px;
+}
+
+select, option {
+   width: 350px;
+   text-align-last: center;
+   font-size: 20px;
+   color: snow;
+   background-color: black;
+   text-align: center;
+}
+
+
+
+/** RESPONSIVE DESIGN **/
+
+/* EN DESSOUS DE 660 PX */
+@media screen and (max-width:660px) { /*mediaquery */
+   #wrapper {
+      max-width: 660px;
+   }
+}
+
+/* EN DESSOUS DE 450 PX */
+@media screen and (max-width:450px) {
+   #wrapper {
+      max-width: 450px;
+   }
+}

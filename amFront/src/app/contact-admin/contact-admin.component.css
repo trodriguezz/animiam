@@ -1,0 +1,32 @@
+/** CONNEXION FORM **/
+
+#contactForm {
+    height: 450px;
+    width: 500px;
+    border-radius: 10%;
+    background-color: snow;
+    box-shadow: 0 0 50px 50px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ }
+ 
+ #loginMotif {
+    display: flex;
+    flex-direction: column;
+ }
+ 
+ textarea {
+    min-height: 125px;
+    max-width: 350px;
+    min-width: 350px;
+ }
+ 
+ #labelContact {
+    padding-top: 15px;
+ }
+ 
+ #submitContact {
+    padding-bottom: 30px;
+ }

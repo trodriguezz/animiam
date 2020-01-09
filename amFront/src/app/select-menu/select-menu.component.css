@@ -1,0 +1,13 @@
+/** SELECT MENU **/
+
+#select {
+   height: 400px;
+   width: 400px;
+   border-radius: 15%;
+   background-color: snow;
+   box-shadow: 0 0 50px 50px rgba(0, 0, 0, 0.2);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}

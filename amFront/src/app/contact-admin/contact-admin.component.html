@@ -1,0 +1,21 @@
+<article>
+    <form action="http://pleione.fr/validform/?se+loger=" method="POST">
+       <div id="contactForm">
+          <label id="labelContact">Contact</label><br />
+          <div id="loginMotif">
+             <input type="text" placeholder="Adresse email ou nom utilisateur" name="username" required><br />
+             <select name="motif" id="motif" required>
+                <option value="">-- Votre signalement concerne --</option>
+                <option value="bug">Un bug</option>
+                <option value="recommandation">Une recommandation</option>
+                <option value="autre">Autre</option>
+             </select>
+          </div><br />
+          <textarea name="textarea" id="textarea" cols="47" rows="20" placeholder="Votre message ici"
+             required></textarea>
+          <div id="submitContact">
+             <input type="submit" id="submit" value="ENVOYER">
+          </div>
+       </div>
+    </form>
+</article>

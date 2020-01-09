@@ -1,0 +1,45 @@
+/**  NAVBAR **/
+
+nav {
+    height: 150px;
+    padding: 0 50px;
+    border-bottom: solid black 8px;
+    font-family: 'Ultra', serif;
+    background-image: linear-gradient(to right top, #8d5520, #6e431b, #513116, #352111, #1c1106);
+    display: flex;
+    justify-content: space-between;
+ }
+ 
+ nav a {
+    color: snow;
+    text-decoration: none;
+ }
+ 
+ nav i {
+    font-size: 70px;
+ }
+ 
+ #wrapper {
+   /*height: 100vh;*/
+   width: auto;
+   background-image: linear-gradient(to right top, #ffffff, #b9b9b9, #777777, #3b3b3b, #000000);
+}
+
+ #login,
+ #contact {
+    font-size: 30px;
+    color: snow;
+    text-align: bottom;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ }
+ 
+ #titre {
+    font-size: 100px;
+    color: snow;
+    padding: 0 auto;
+    flex: 1;
+    text-align: center;
+ }

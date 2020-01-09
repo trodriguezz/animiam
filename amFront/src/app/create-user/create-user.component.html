@@ -1,0 +1,15 @@
+<article>
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">  <!-- attribut #f = réference locale -->
+    <div id="inscriptionForm">
+      <label>Inscription</label><br /><br />
+      <input type="text" placeholder="Nom utilisateur" name="username" ngModel><br />
+      <input type="text" placeholder="Prénom" name="firstname" ngModel><br />
+      <input type="text" placeholder="Nom" name="name" ngModel><br />
+      <input type="text" placeholder="Adresse email" name="email" ngModel><br />
+      <input type="password" placeholder="Mot de passe" name="password" ngModel>
+      <div id="connexion">
+        <input type="submit" value="INSCRIPTION"><br />
+      </div>
+    </div>
+  </form>
+</article>

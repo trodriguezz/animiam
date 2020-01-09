@@ -1,0 +1,19 @@
+/** START MENU **/
+
+#startButton {
+  height: 350px;
+  width: 350px;
+  background-color: snow;
+  margin: 0 auto;
+  border-radius: 15%;
+  box-shadow: 0 0 50px 50px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+article i {
+  color: black;
+  transform: rotate(-15deg);
+  font-size: 200px;
+}
