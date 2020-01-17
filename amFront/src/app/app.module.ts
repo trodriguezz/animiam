@@ -13,6 +13,9 @@ import { TableSelectComponent } from './table-select/table-select.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { AlertModule } from 'ngx-bootstrap';
+import { AlertComponent } from './alert/alert.component';
+
 
 @NgModule({
   declarations: [
@@ -24,13 +27,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CreateUserComponent,
     SelectMenuComponent,
     TableSelectComponent,
+    AlertComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AlertModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

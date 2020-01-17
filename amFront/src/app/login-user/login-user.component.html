@@ -1,11 +1,10 @@
 <article>
-  <form>
+  <form (ngSubmit) = "onSubmit()" [formGroup]="formLogin">
     <div id="loginForm">
       <label>Connexion</label><br /><br />
-      <input type="text" placeholder="Adresse email ou nom utilisateur" name="username" required />
+      <input type="text" placeholder="Nom utilisateur" name="username" formControlName="pseudo"/>
       <br />
-      <input type="password" placeholder="Mot de passe" name="password" required>
-      <!-- required = attribut qui permet de mettre en forme les éléments obligatoires pour remplir correctement un formulaire. -->
+      <input type="password" placeholder="Mot de passe" name="password" formControlName="password"/>
       <div id="connexion">
         <input type="submit" id='submit' value="SE CONNECTER"><br />
         <a id="inscription" href="" routerLink="/create">-- S'inscrire --</a>

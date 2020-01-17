@@ -1,12 +1,12 @@
 <article>
-  <form (ngSubmit)="onSubmit(f)" #f="ngForm">  <!-- attribut #f = réference locale -->
+  <form (ngSubmit) = "onSubmit()" [formGroup] = "formUser">  <!-- [type formGroup] = "donnée membre" => permet de faire le lien entre le .ts et form .html -->
     <div id="inscriptionForm">
       <label>Inscription</label><br /><br />
-      <input type="text" placeholder="Nom utilisateur" name="username" ngModel><br />
-      <input type="text" placeholder="Prénom" name="firstname" ngModel><br />
-      <input type="text" placeholder="Nom" name="name" ngModel><br />
-      <input type="text" placeholder="Adresse email" name="email" ngModel><br />
-      <input type="password" placeholder="Mot de passe" name="password" ngModel>
+      <input type="text" placeholder="Nom utilisateur" name="username" formControlName="pseudo"><br /> <!-- formControlName = attribut ng faisant le lien entre les input et le .ts formControl -->
+      <input type="text" placeholder="Prénom" name="firstname" formControlName="prenom"><br />
+      <input type="text" placeholder="Nom" name="name" formControlName="nom"><br />
+      <input type="text" placeholder="Adresse email" name="email" formControlName="email"><br />
+      <input type="password" placeholder="Mot de passe" name="password" formControlName="password">
       <div id="connexion">
         <input type="submit" value="INSCRIPTION"><br />
       </div>
