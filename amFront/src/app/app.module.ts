@@ -10,11 +10,13 @@ import { ContactAdminComponent } from './contact-admin/contact-admin.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { SelectMenuComponent } from './select-menu/select-menu.component';
 import { TableSelectComponent } from './table-select/table-select.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AlertModule } from 'ngx-bootstrap';
 import { AlertComponent } from './alert/alert.component';
+import { SecurityInterceptorService } from './services/security-interceptor.service';
+import { AlimentComponent } from './aliment/aliment.component';
 
 
 @NgModule({
@@ -28,6 +30,7 @@ import { AlertComponent } from './alert/alert.component';
     SelectMenuComponent,
     TableSelectComponent,
     AlertComponent,
+    AlimentComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,13 @@ import { AlertComponent } from './alert/alert.component';
     ReactiveFormsModule,
     AlertModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: SecurityInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -28,7 +28,8 @@ export class AlertService {
   }
 
   startTempo() {
-    setTimeout( ()=>{
+    setTimeout( 
+      () => {
       this.alertInfo.type = "";
       this.alertInfo.message = "";
     },

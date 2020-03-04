@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Login } from '../login';
-import { LoginService } from '../login.service';
+import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,14 +10,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./login-user.component.css']
 })
 export class LoginUserComponent implements OnInit {
- //Constructeur / injection de dépendance
+ // Constructeur / injection de dépendance
  constructor(private loginService: LoginService, private router: Router) { }
- //Fonction appelée lors de l'initialisation du contrôleur
+ // Fonction appelée lors de l'initialisation du contrôleur
  ngOnInit() {
  }
 
   onSubmit() {
-    const loginUser = new Login(); // creation new instance et affectation à loginUser
+    const loginUser = new Login(); // Création new instance et affectation à loginUser
 
     loginUser.pseudo = this.formLogin.value.pseudo;
     loginUser.password = this.formLogin.value.password;

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
-import { UserService } from '../user.service';
+import { UserService } from '../services/user.service';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AlertService } from '../alert.service';
+import { AlertService } from '../services/alert.service';
 
 @Component({
   selector: 'app-create-user',

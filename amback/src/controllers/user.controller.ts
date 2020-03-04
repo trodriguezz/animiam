@@ -19,11 +19,14 @@ import {
 } from '@loopback/rest';
 import {User} from '../models';
 import {UserRepository} from '../repositories';
+import { inject } from '@loopback/core';
+import { PasswordNS } from '../component/password/types';
 
 export class UserController {
   constructor(
     @repository(UserRepository)
     public userRepository : UserRepository,
+    @inject(PasswordNS.PASSWORD_HASHER) private hasher : PasswordNS.IPasswordHasher
   ) {}
 
   @post('/users', {
@@ -47,7 +50,11 @@ export class UserController {
     })
     user: User,
   ): Promise<User> {
-    return this.userRepository.create(user);
+    
+    user.password = await this.hasher.hashPassword(user.password); // hash
+    let retNewUser = await this.userRepository.create(user); // sauvegarde
+    retNewUser.password = ""; // !! suppression du mot de passe !!
+    return retNewUser;
   }
 
   @get('/users/count', {

@@ -43,3 +43,16 @@ nav {
     flex: 1;
     text-align: center;
  }
+
+ /** responsive 
+
+ /* EN DESSOUS DE 450 PX */
+@media screen and (max-width:450px) {
+   #wrapper {
+      min-width: 450px;
+   };
+   nav i {
+      font-size: 10px;
+
+   }
+}

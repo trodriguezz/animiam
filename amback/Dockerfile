@@ -1,10 +1,10 @@
 # Check out https://hub.docker.com/_/node to select a new base image
 FROM node:10-slim
 
-# Set to a non-root built-in user `node`
+# creation de la racine de l'application`
 USER node
 
-# Create app directory (with user `node`)
+# creation des repertoires
 RUN mkdir -p /home/node/app
 
 WORKDIR /home/node/app
@@ -21,8 +21,9 @@ COPY --chown=node . .
 
 RUN npm run build
 
-# Bind to all network interfaces so that it can be mapped to the host OS
+# variable d'environnement
 ENV HOST=0.0.0.0 PORT=3000
 
+# exportation du port
 EXPOSE ${PORT}
 CMD [ "node", "." ]
