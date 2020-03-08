@@ -30,6 +30,11 @@ export class TableSelectComponent implements OnInit {
     id: 4,
     name: "sardine",
     status: "ok",
+  },
+  {
+    id:553,
+    name: "<BALEINE/>",
+    status: "ko",
   }
 ]
 

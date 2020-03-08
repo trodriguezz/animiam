@@ -1,32 +1,79 @@
 /** LOGIN FORM **/
 
 #loginForm {
-    height: 400px;
-    width: 500px;
-    border-radius: 15%;
-    background-color: snow;
-    box-shadow: 0 0 50px 50px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
- }
- 
- #connexion {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
- }
- 
- #inscription {
+  height: 400px;
+  width: 400px;
+  border-radius: 15%;
+  background-color: snow;
+  box-shadow: 0 0 50px 50px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#connexion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#inscription {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+
+#inscription:hover {
+  text-decoration: none;
+  color: red;
+  font-size: 20px;
+}
+
+#loginLabel {
+  margin-top: 10px;
+}
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.input {
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
+
+
+/** responsive 
+
+ /* EN DESSOUS DE 450 PX */
+@media screen and (max-width:450px) {
+
+  #loginForm {
+    height: 295px;
+    width: 295px;
+  }
+
+  #loginLabel {
+    font-size: 25px;
+    margin-bottom: -10px;
+  }
+
+  #inscription {
     text-decoration: none;
-    color: black;
-    font-size: 20px;
- }
- 
- #inscription:hover {
-    text-decoration: none;
-    color:red;
-    font-size: 20px;
- 
- }
+    color: red;
+    margin-bottom: 10px;
+    padding-top: -10px;
+  }
+
+  #submit {
+    margin-top: 30px;
+  }
+
+  .input {
+    margin-top: 30px;
+  }
+
+}

@@ -21,7 +21,7 @@ label {
 input {
    width: 350px;
    text-align-last: center;
-   font-size: 22px;
+   font-size: 20px;
    color: snow;
    background-color: black;
    text-align: center;
@@ -52,15 +52,43 @@ select, option {
 /** RESPONSIVE DESIGN **/
 
 /* EN DESSOUS DE 660 PX */
-@media screen and (max-width:660px) { /*mediaquery */
-   #wrapper {
+/* @media screen and (max-width:660px) { /*mediaquery */
+   /* #wrapper {
       max-width: 660px;
-   }
-}
+   } */
 
 /* EN DESSOUS DE 450 PX */
 @media screen and (max-width:450px) {
-   #wrapper {
-      max-width: 450px;
+  
+   article {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+   
+   label {
+      font-family: 'Ultra', serif;
+      font-size: 30px;
+   }
+   
+   input {
+      width: 220px;
+      height: 25px;
+      text-align-last: center;
+      font-size: 22px;
+      color: snow;
+      background-color: black;
+      text-align: center;
+   }
+   
+   input[type="submit"] {
+      height: 80px;
+      width: 200px;
+      font-size: 14px;
+   }
+   
+   select, option {
+      width: 220px;
+      font-size: 18px;
    }
 }

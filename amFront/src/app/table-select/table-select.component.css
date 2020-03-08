@@ -16,3 +16,15 @@ caption {
 #table tbody tr:nth-child(odd) {
    background-color: snow;
 }
+
+ /** responsive 
+
+ /* EN DESSOUS DE 450 PX */
+ @media screen and (max-width:450px) {
+
+   table {
+     height: 295px;
+     width: 295px;
+   }
+ 
+ }

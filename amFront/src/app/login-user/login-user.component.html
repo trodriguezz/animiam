@@ -1,14 +1,15 @@
 <article>
-  <form (ngSubmit) = "onSubmit()" [formGroup]="formLogin">
-    <div id="loginForm">
-      <label>Connexion</label><br /><br />
-      <input type="text" placeholder="Nom utilisateur" name="username" formControlName="pseudo"/>
-      <br />
-      <input type="password" placeholder="Mot de passe" name="password" formControlName="password"/>
+  <div id="loginForm">
+    <form (ngSubmit)="onSubmit()" [formGroup]="formLogin">
+      <div class="box">
+        <label id="loginLabel">Connexion</label>
+      <input class="input" type="text" placeholder="Nom utilisateur" name="username" formControlName="pseudo" />
+      <input type="password" placeholder="Mot de passe" name="password" formControlName="password" />
       <div id="connexion">
-        <input type="submit" id='submit' value="SE CONNECTER"><br />
-        <a id="inscription" href="" routerLink="/create">-- S'inscrire --</a>
+      <input type="submit" id='submit' value="SE CONNECTER"><br/>
+        <a id="inscription" routerLink="/create"><em>inscription</em></a>
       </div>
     </div>
-  </form>
+    </form>
+  </div>
 </article>

@@ -1,8 +1,8 @@
 /** START MENU **/
 
 #startButton {
-  height: 350px;
-  width: 350px;
+  height: 400px;
+  width: 400px;
   background-color: snow;
   margin: 0 auto;
   border-radius: 15%;
@@ -16,4 +16,23 @@ article i {
   color: black;
   transform: rotate(-15deg);
   font-size: 200px;
+}
+
+
+/** responsive 
+
+ /* EN DESSOUS DE 450 PX */
+ @media screen and (max-width:450px) {
+
+  #startButton {
+    height: 295px;
+    width: 295px;
+  }
+
+  article i {
+    font-size: 150px;
+  }
+
+
+
 }

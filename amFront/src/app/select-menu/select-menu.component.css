@@ -11,3 +11,20 @@
    justify-content: center;
    align-items: center;
 }
+
+#food-select {
+  margin-top: 5px;
+
+}
+
+/** responsive 
+
+ /* EN DESSOUS DE 450 PX */
+ @media screen and (max-width:450px) {
+
+   #select {
+     height: 295px;
+     width: 295px;
+   }
+
+ }

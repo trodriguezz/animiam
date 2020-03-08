@@ -1,14 +1,14 @@
 <article>
-  <form (ngSubmit) = "onSubmit()" [formGroup] = "formUser">  <!-- [type formGroup] = "donnée membre" => permet de faire le lien entre le .ts et form .html -->
+  <form  (ngSubmit) = "onSubmit()" [formGroup] = "formUser">  <!-- [type formGroup] = "donnée membre" => permet de faire le lien entre le .ts et form .html -->
     <div id="inscriptionForm">
-      <label>Inscription</label><br /><br />
-      <input type="text" placeholder="Nom utilisateur" name="username" formControlName="pseudo"><br /> <!-- formControlName = attribut ng faisant le lien entre les input et le .ts formControl -->
-      <input type="text" placeholder="Prénom" name="firstname" formControlName="prenom"><br />
-      <input type="text" placeholder="Nom" name="name" formControlName="nom"><br />
-      <input type="text" placeholder="Adresse email" name="email" formControlName="email"><br />
+      <label class="label" >Inscription</label>
+      <input class="input" type="text" placeholder="Nom utilisateur" name="username" formControlName="pseudo"><!-- formControlName = attribut ng faisant le lien entre les input et le .ts formControl -->
+      <input class="input" type="text" placeholder="Prénom" name="firstname" formControlName="prenom">
+      <input class="input" type="text" placeholder="Nom" name="name" formControlName="nom">
+      <input class="input" type="text" placeholder="Adresse email" name="email" formControlName="email">
       <input type="password" placeholder="Mot de passe" name="password" formControlName="password">
-      <div id="connexion">
-        <input type="submit" value="INSCRIPTION"><br />
+      <div class="btnsubmit" id="connexion">
+        <input type="submit" value="VALIDER">
       </div>
     </div>
   </form>

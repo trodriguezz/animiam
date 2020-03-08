@@ -2,31 +2,31 @@
 
 nav {
     height: 150px;
+    width: 100%;
     padding: 0 50px;
     border-bottom: solid black 8px;
     font-family: 'Ultra', serif;
     background-image: linear-gradient(to right top, #8d5520, #6e431b, #513116, #352111, #1c1106);
     display: flex;
     justify-content: space-between;
+    align-items: center;
  }
  
  nav a {
+    /* border: 1px solid red; */
     color: snow;
     text-decoration: none;
  }
  
  nav i {
+   /* border: 1px solid red; */
     font-size: 70px;
  }
  
- #wrapper {
-   /*height: 100vh;*/
-   width: auto;
-   background-image: linear-gradient(to right top, #ffffff, #b9b9b9, #777777, #3b3b3b, #000000);
-}
 
  #login,
  #contact {
+   /* border: 1px solid red; */
     font-size: 30px;
     color: snow;
     text-align: bottom;
@@ -39,7 +39,6 @@ nav {
  #titre {
     font-size: 100px;
     color: snow;
-    padding: 0 auto;
     flex: 1;
     text-align: center;
  }
@@ -48,11 +47,29 @@ nav {
 
  /* EN DESSOUS DE 450 PX */
 @media screen and (max-width:450px) {
-   #wrapper {
-      min-width: 450px;
-   };
-   nav i {
-      font-size: 10px;
 
+   nav {
+      padding: 10px;
+      height: auto;
+      border-bottom: solid black 5px;
    }
+   
+   
+   nav i {
+      font-size: 50px;
+   }
+
+   #titre {
+      font-size: 40px;
+   }
+
+   #login,
+   #contact {
+      font-size: 13px;
+   }
+
+   .label {
+      display: none;
+   }
+   
 }

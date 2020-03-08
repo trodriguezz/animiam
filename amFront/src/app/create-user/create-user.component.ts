@@ -18,7 +18,6 @@ export class CreateUserComponent implements OnInit {
   }
 
   // ** Fonction appelée lors de la soumition du form ** //
-
   onSubmit() {
     const newUser = new User(); // creation new instance et affectation à newUser
 

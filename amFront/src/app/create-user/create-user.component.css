@@ -1,9 +1,9 @@
 /** INSCRIPTION FORM **/
 
 #inscriptionForm {
-    height: 480px;
-    width: 500px;
-    border-radius: 10%;
+  height: 400px;
+  width: 400px;
+  border-radius: 15%;
     background-color: snow;
     box-shadow: 0 0 50px 50px rgba(0, 0, 0, 0.2);
     display: flex;
@@ -11,3 +11,42 @@
     justify-content: center;
     align-items: center;
  }
+
+ .label {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.btnsubmit {
+  margin-top: -30px;
+}
+
+.input {
+  margin-bottom: 5px;
+}
+
+ /** responsive 
+
+ /* EN DESSOUS DE 450 PX */
+@media screen and (max-width:450px) {
+
+    #inscriptionForm {
+      height: 295px;
+      width: 295px;
+    }
+
+    .label {
+      font-size: 25px;
+      margin-top: -10px;
+      margin-bottom: 0px;
+    }
+
+    .btnsubmit {
+      margin-top: -40px;
+      margin-bottom: 0px;
+    }
+
+   
+  
+  }
+  
