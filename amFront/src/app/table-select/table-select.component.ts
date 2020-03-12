@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlimentService } from '../services/aliment.service';
 
 @Component({
   selector: 'app-table-select',
@@ -7,38 +8,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableSelectComponent implements OnInit {
 
-  constructor() { }
+  constructor(private srvAliments: AlimentService) { }
 
  // ! liste aliments dans array
- aliments = [
-  {
-    id: 1,
-    name: "saumon",
-    status: "ok",
-  },
-  {
-    id: 2,
-    name: "cabillaud",
-    status: "ok",
-  },
-  {
-    id: 3,
-    name: "thon",
-    status: "ko",
-  },
-  {
-    id: 4,
-    name: "sardine",
-    status: "ok",
-  },
-  {
-    id:553,
-    name: "<BALEINE/>",
-    status: "ko",
-  }
-]
+ aliments = [];
+//  aliments = [
+//   {
+//     id: 1,
+//     name: "saumon",
+//     status: "ok",
+//   },
+//   {
+//     id: 2,
+//     name: "cabillaud",
+//     status: "ok",
+//   },
+//   {
+//     id: 3,
+//     name: "thon",
+//     status: "ko",
+//   },
+//   {
+//     id: 4,
+//     name: "sardine",
+//     status: "ok",
+//   },
+// ]
 
   ngOnInit() {
+    this.srvAliments.getAllAliment().subscribe(
+      (dataReponse: any[]) => {
+        this.aliments = dataReponse;
+      },
+      (err: any) => {
+        console.error(err);
+      }
+    );
   }
 
   

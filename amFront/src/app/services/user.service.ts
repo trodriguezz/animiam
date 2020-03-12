@@ -7,9 +7,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
-  /**
-   * fonction creation utilisateur
-   */
+
+  //!  injection de dépendance, modul HttpClient
+  constructor(private http: HttpClient) { }
+  
+  //! createUser() = fonction va se connecter à db et récuperer liste user lors de la création new user
   createUser(user:User) : Observable<User>{
     return this.http.post<User>('http://localhost:3000/users', JSON.stringify(user),
     {
@@ -20,6 +22,4 @@ export class UserService {
 
   }
 
-  // injection de dépendance
-  constructor(private http: HttpClient) { }
 }
