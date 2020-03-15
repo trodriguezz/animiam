@@ -1,4 +1,4 @@
-/** CONNEXION FORM **/
+/** CONTACT ADMIN **/
 
 #contactForm {
   height: 400px;
@@ -22,6 +22,7 @@ textarea {
   max-height: 100px;
   max-width: 350px;
   min-width: 350px;
+  text-align: center;
   margin-bottom: 10px;
 }
 
@@ -39,10 +40,29 @@ textarea {
 }
 
 
-/** responsive 
+/** RESPONSIVE DESIGN **/
 
- /* EN DESSOUS DE 450 PX */
-@media screen and (max-width:450px) {
+/** EN DESSOUS DE 660 PX (tablette) **/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+  
+  #contactForm {
+    height: 500px;
+    width: 500px;
+  }
+
+  textarea {
+    max-width: 320px;
+    min-width: 320px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    margin-top: 2px;
+    font-size: 25px;
+    border: 0.1px solid grey;
+  }
+}
+
+/** EN DESSOUS DE 450 PX (smartphone) **/
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 
   #contactForm {
     height: 295px;
@@ -50,19 +70,15 @@ textarea {
   }
 
   #loginMotif {
-    display: flex;
-    flex-direction: column;
     margin-bottom: -30px;
-
   }
 
   textarea {
-    max-width: 260px;
-    min-width: 260px;
+    max-width: 220px;
+    min-width: 220px;
     margin-top: 10px;
-    text-align: center;
-    border: 0.1px solid grey;
     margin-bottom: 2px;
+    border: 0.1px solid grey;
   }
 
   #signal {
@@ -78,5 +94,4 @@ textarea {
   #submitContact {
     margin-bottom: -30px;
   }
-
 }

@@ -19,10 +19,23 @@ article i {
 }
 
 
-/** responsive 
+/** RESPONSIVE DESIGN **/
 
- /* EN DESSOUS DE 450 PX */
- @media screen and (max-width:450px) {
+/** EN DESSOUS DE 660 PX (tablette) **/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+  
+  #startButton {
+    height: 500px;
+    width: 500px;
+  }
+
+  article i {
+    font-size: 250px;
+  }
+}
+
+ /** EN DESSOUS DE 450 PX (smartphone) **/
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 
   #startButton {
     height: 295px;
@@ -32,7 +45,4 @@ article i {
   article i {
     font-size: 150px;
   }
-
-
-
 }

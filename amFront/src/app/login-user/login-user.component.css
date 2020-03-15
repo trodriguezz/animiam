@@ -19,6 +19,7 @@
 }
 
 #inscription {
+  font-family: 'Ultra', serif;
   text-decoration: none;
   color: black;
   font-size: 20px;
@@ -47,10 +48,24 @@
 }
 
 
-/** responsive 
+/** RESPONSIVE DESIGN **/
 
- /* EN DESSOUS DE 450 PX */
-@media screen and (max-width:450px) {
+/** EN DESSOUS DE 660 PX (tablette) **/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+
+  #loginForm {
+    height: 500px;
+    width: 500px;
+  }
+
+  #inscription {
+    font-size: 20px;
+    color: red;
+  }
+}
+
+/** EN DESSOUS DE 450 PX (smartphone) **/
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 
   #loginForm {
     height: 295px;
@@ -63,10 +78,10 @@
   }
 
   #inscription {
-    text-decoration: none;
-    color: red;
-    margin-bottom: 10px;
+    font-size: 15px;
+    margin-bottom: 15px;
     padding-top: -10px;
+    color: red;
   }
 
   #submit {
@@ -76,5 +91,4 @@
   .input {
     margin-top: 30px;
   }
-
 }

@@ -1,75 +1,94 @@
 /**  NAVBAR **/
 
 nav {
-    height: 150px;
-    width: 100%;
-    padding: 0 50px;
-    border-bottom: solid black 8px;
-    font-family: 'Ultra', serif;
-    background-image: linear-gradient(to right top, #8d5520, #6e431b, #513116, #352111, #1c1106);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
- }
- 
- nav a {
-    /* border: 1px solid red; */
-    color: snow;
-    text-decoration: none;
- }
- 
- nav i {
-   /* border: 1px solid red; */
+  height: 150px;
+  width: 100%;
+  padding: 0 50px;
+  border-bottom: solid black 8px;
+  font-family: 'Ultra', serif;
+  background-image: linear-gradient(to right top, #8d5520, #6e431b, #513116, #352111, #1c1106);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  color: snow;
+  text-decoration: none;
+}
+
+nav i {
+  font-size: 70px;
+}
+
+
+#login,
+#contact {
+  font-size: 30px;
+  color: snow;
+  text-align: bottom;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#titre {
+  font-size: 100px;
+  color: snow;
+  flex: 1;
+  text-align: center;
+}
+
+
+/** RESPONSIVE DESIGN **/
+
+/** EN DESSOUS DE 660 PX (tablette) **/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+
+  nav {
+    padding: 10px;
+    height: auto;
+    border-bottom: solid black 10px;
+  }
+
+  nav i {
+    font-size: 50px;
+  }
+
+  #titre {
     font-size: 70px;
- }
- 
+  }
 
- #login,
- #contact {
-   /* border: 1px solid red; */
-    font-size: 30px;
-    color: snow;
-    text-align: bottom;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
- }
- 
- #titre {
-    font-size: 100px;
-    color: snow;
-    flex: 1;
-    text-align: center;
- }
 
- /** responsive 
+  nav i {
+    font-size: 60px;
+  }
+}
 
- /* EN DESSOUS DE 450 PX */
-@media screen and (max-width:450px) {
+/** EN DESSOUS DE 450 PX (smartphone) **/
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 
-   nav {
-      padding: 10px;
-      height: auto;
-      border-bottom: solid black 5px;
-   }
-   
-   
-   nav i {
-      font-size: 50px;
-   }
+  nav {
+    padding: 10px;
+    height: auto;
+    border-bottom: solid black 5px;
+  }
 
-   #titre {
-      font-size: 40px;
-   }
+  nav i {
+    font-size: 50px;
+  }
 
-   #login,
-   #contact {
-      font-size: 13px;
-   }
+  #titre {
+    font-size: 40px;
+  }
 
-   .label {
-      display: none;
-   }
-   
+  #login,
+  #contact {
+    font-size: 13px;
+  }
+
+  .label {
+    display: none;
+  }
 }

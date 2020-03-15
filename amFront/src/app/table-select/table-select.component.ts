@@ -12,6 +12,19 @@ export class TableSelectComponent implements OnInit {
 
  // ! liste aliments dans array
  aliments = [];
+
+  ngOnInit() {
+    this.srvAliments.getAllAliment().subscribe(
+      (dataReponse: any[]) => {
+        this.aliments = dataReponse;
+      },
+      (err: any) => {
+        console.error(err);
+      }
+    );
+  }
+}
+
 //  aliments = [
 //   {
 //     id: 1,
@@ -34,18 +47,3 @@ export class TableSelectComponent implements OnInit {
 //     status: "ok",
 //   },
 // ]
-
-  ngOnInit() {
-    this.srvAliments.getAllAliment().subscribe(
-      (dataReponse: any[]) => {
-        this.aliments = dataReponse;
-      },
-      (err: any) => {
-        console.error(err);
-      }
-    );
-  }
-
-  
-
-}

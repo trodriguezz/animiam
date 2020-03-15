@@ -1,59 +1,92 @@
 /** TABLE SELECT **/
 
-.box {
-   height: 400px;
-   width: 400px;
-   border-radius: 15%;
-   background-color: snow;
-   box-shadow: 0 0 50px 50px rgba(0, 0, 0, 0.2);
-   border: 1px solid red;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-}
-
-table {
-   table-layout: auto; /* La propriété table-layout définit l'algorithme utilisé pour disposer les cellules, lignes et colonnes d'un tableau */
-   width: 395px;
-   text-align: center;
-   /* border: 1px solid red; */
+.boxTable {
+  height: 400px;
+  width: 400px;
+  border-radius: 15%;
+  background-color: snow;
+  box-shadow: 0 0 50px 50px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgb(192, 190, 190);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 caption {
-   font-family: 'Ultra', serif;
-   color: black;
-   font-size: 30px;
-   text-align: center;
-   /* border: 1px solid red; */
+  font-family: 'Ultra', serif;
+  font-size: 30px;
+  color: black;
+  text-align: center;
+}
+
+table {
+  table-layout: auto; /* La propriété table-layout définit l'algorithme utilisé pour disposer les cellules, lignes et colonnes d'un tableau */
+  text-align: center;
+  height: auto;
+  width: 395px;
+}
+
+table,
+th {
+  font-size: 20px;
+  margin-left: 25px;
 }
 
 .label {
-   font-family: 'Ultra', serif;
-   color: black;
-   font-size: 15px;
+  font-family: 'Ultra', serif;
+  color: black;
+  font-size: 15px;
 }
 
-/* #table tbody tr:nth-child(odd) {
-   background-color: snow;
-} */
+#table tbody tr:nth-child(odd) {
+  background-color: snow;
+}
 
 
- /** responsive 
+/** RESPONSIVE DESIGN **/
 
- /* EN DESSOUS DE 450 PX */
- @media screen and (max-width:450px) {
+/** EN DESSOUS DE 660 PX (tablette) **/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
 
-   .box {
-     height: 295px;
-     width: 295px;
-   }
+  .boxTable {
+    height: 500px;
+    width: 500px;
+  }
 
-   table {
-      width: 290px;
-   }
+  caption {
+    font-size: 40px;
+  }
 
-   caption {
-      font-size: 25px;
-   }
- 
- }
+  table {
+    width: 490px;
+    font-size: 25px;
+  }
+
+  table,
+  th {
+    font-size: 25px;
+    margin-left: 40px;
+  }
+}
+
+/** EN DESSOUS DE 450 PX (smartphone) **/
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+  .boxTable {
+    height: 295px;
+    width: 295px;
+  }
+
+  table {
+    width: 290px;
+  }
+
+  table,
+  th {
+    font-size: 18px;
+  }
+
+  caption {
+    font-size: 25px;
+  }
+}
