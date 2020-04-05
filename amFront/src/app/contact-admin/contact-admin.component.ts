@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AdminService } from '../services/admin.service';
+import { Admin } from '../admin';
+import { AlertService } from '../services/alert.service';
 
 @Component({
   selector: 'app-contact-admin',
@@ -7,9 +12,46 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactAdminComponent implements OnInit {
 
-  constructor() { }
+  // * injection modules et services dans contructor
+  constructor(private adminService: AdminService, private router: Router, public svrAlert: AlertService) { }
 
   ngOnInit() {
   }
+
+  onSubmit() {
+
+     const messageAdmin = new Admin;
+
+     messageAdmin.pseudo = this.formAdmin.value.pseudo;
+     messageAdmin.motif = this.formAdmin.value.motif;
+     messageAdmin.textarea = this.formAdmin.value.textarea;
+
+    this.adminService.contactAdmin(messageAdmin).subscribe(
+
+      (data) => {
+        console.log(data);
+        this.svrAlert.addSuccess("Votre recommandation à bien été envoyée !");
+        this.router.navigate(['']);
+      },
+
+      (error) => {
+        console.log(error);
+        this.svrAlert.addError("Champ(s) manquant(s) ! Veuillez réessayer !");
+      },
+    )
+
+    // console.log(messageAdmin);
+  }
+
+
+
+
+
+  formAdmin: FormGroup = new FormGroup
+  ({
+    pseudo: new FormControl(""),
+    motif: new FormControl(""),
+    textarea: new FormControl(""),
+  });
 
 }

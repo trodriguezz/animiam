@@ -33,6 +33,6 @@ export class AlertService {
       this.alertInfo.type = "";
       this.alertInfo.message = "";
     },
-    2000 )
+    3000 );
   }
 }

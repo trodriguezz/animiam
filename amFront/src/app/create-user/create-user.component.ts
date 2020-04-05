@@ -11,15 +11,17 @@ import { AlertService } from '../services/alert.service';
   styleUrls: ['./create-user.component.css']
 })
 export class CreateUserComponent implements OnInit {
-  //Constructeur / injection de dépendance
+
+  // * Constructeur / injection de dépendance
   constructor(private userService: UserService, private router: Router, public srvAlert: AlertService) { }
-  //Fonction appelée lors de l'initialisation du contrôleur
+
+  // * ngOnInit() = fonction appelée lors de l'initialisation du contrôleur
   ngOnInit() {
   }
 
-  // ** Fonction appelée lors de la soumition du form ** //
+  // * onSubmit() = fonction appelée lors de la soumition du form //
   onSubmit() {
-    const newUser = new User(); // creation new instance et affectation à newUser
+    const newUser = new User(); // creation new instance (new objet) et affectation à newUser
 
     newUser.email = this.formUser.value.email;
     newUser.nom = this.formUser.value.nom;

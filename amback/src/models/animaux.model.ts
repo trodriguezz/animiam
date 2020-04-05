@@ -1,7 +1,7 @@
 import {Entity, model, property} from '@loopback/repository';
 
 @model({settings: {strict: false}})
-export class Aliment extends Entity {
+export class Animaux extends Entity {
   @property({
     type: 'number',
     id: true,
@@ -15,38 +15,19 @@ export class Aliment extends Entity {
   })
   type: string;
 
-  @property({
-    type: 'string',
-    required: true,
-  })
-  name: string;
-
-  @property({
-    type: 'string',
-    required: true,
-  })
-  status: string;
-
-  @property({
-    type: 'array',
-    itemType: 'string',
-    required: true,
-  })
-  animaux: string[];
-
   // Define well-known properties here
 
   // Indexer property to allow additional data
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [prop: string]: any;
 
-  constructor(data?: Partial<Aliment>) {
+  constructor(data?: Partial<Animaux>) {
     super(data);
   }
 }
 
-export interface AlimentRelations {
+export interface AnimauxRelations {
   // describe navigational properties here
 }
 
-export type AlimentWithRelations = Aliment & AlimentRelations;
+export type AnimauxWithRelations = Animaux & AnimauxRelations;

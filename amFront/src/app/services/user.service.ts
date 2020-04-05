@@ -8,11 +8,11 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
-  //!  injection de dépendance, modul HttpClient
+  //!  injection de dépendance, module HttpClient
   constructor(private http: HttpClient) { }
   
-  //! createUser() = fonction va se connecter à db et récuperer liste user lors de la création new user
-  createUser(user:User) : Observable<User>{
+  //! createUser() = fonction qui va se connecter à db et qui va enregistrer new user dans collection /users lors de la création new user
+  createUser(user: User) : Observable<User>{
     return this.http.post<User>('http://localhost:3000/users', JSON.stringify(user),
     {
       headers: new HttpHeaders().set("Content-Type","application/json")

@@ -42,6 +42,16 @@ th {
   background-color: snow;
 }
 
+#checkbox {
+  border: solid 1px red;
+  /* display: flex; */
+  justify-content: center;
+}
+
+input {
+  width: auto;
+}
+
 
 /** RESPONSIVE DESIGN **/
 

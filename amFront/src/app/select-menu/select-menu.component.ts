@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AnimauxService } from '../services/animaux.service';
 
 @Component({
   selector: 'app-select-menu',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelectMenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(private svrAnimaux: AnimauxService) { }
+
+  animaux: any[] = [];
 
   ngOnInit() {
+    this.svrAnimaux.getAllAnimaux().subscribe(
+      (dataReponse: any[]) => {
+        this.animaux = dataReponse;
+      },
+      (err: any) => {
+        console.error(err);
+      }
+    );
   }
 
 }

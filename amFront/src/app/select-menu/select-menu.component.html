@@ -3,15 +3,17 @@
     <div id="select">
       <select name="pet" id="pet-select">
         <option value="">-- Choisir un animal --</option>
-        <option value="chat">Chat</option>
-        <option value="chien">Chien</option>
+        <!-- <option value="chat">Chat</option>
+        <option value="chien">Chien</option> -->
+        <option  *ngFor= "let animal of animaux" value= "{{animal._id}}">{{ animal.type }}</option>
       </select>
       <select name="food" id="food-select">
         <option value="">-- Choisir un aliment --</option>
-        <option value="fruit">Fruit</option>
+        <option></option>
+        <!-- <option value="fruit">Fruit</option>
         <option value="legume">Légume</option>
         <option value="viande">Viande</option>
-        <option value="poisson">Poisson</option>
+        <option value="poisson">Poisson</option> -->
       </select>
       <a href="" routerLink="/table"><input type="submit" value="Miam !"></a>
     </div>
