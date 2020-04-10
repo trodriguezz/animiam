@@ -12,31 +12,27 @@
   align-items: center;
 }
 
-#loginMotif {
-  display: flex;
-  flex-direction: column;
-}
-
 textarea {
   min-height: 100px;
   max-height: 100px;
   max-width: 350px;
   min-width: 350px;
+  margin-bottom: 20px;
   text-align: center;
-  margin-bottom: 10px;
 }
 
 #labelContact {
   color: black;
-  padding-top: 10px;
+  margin-bottom: 15px;
 }
 
 #submitContact {
-  margin-top: -50px;
+  margin-top: 5px;
 }
 
 #motif {
   margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 
@@ -51,12 +47,10 @@ textarea {
   }
 
   textarea {
+    font-size: 25px;
     max-width: 320px;
     min-width: 320px;
-    margin-top: 10px;
     margin-bottom: 15px;
-    margin-top: 2px;
-    font-size: 25px;
     border: 0.1px solid grey;
   }
 }
@@ -69,29 +63,20 @@ textarea {
     width: 295px;
   }
 
-  #loginMotif {
-    margin-bottom: -30px;
-  }
-
   textarea {
     max-width: 220px;
     min-width: 220px;
-    margin-top: 10px;
-    margin-bottom: 2px;
+    max-height: 80px;
+    min-height: 80px;
+    margin-bottom: 5px;
     border: 0.1px solid grey;
   }
 
-  #signal {
-    font-size: 100px;
-  }
-
   #labelContact {
-    margin-top: -60px;
-    font-size: 25px;
-    margin-bottom: -20px;
+    margin-bottom: 5px;
   }
 
   #submitContact {
-    margin-bottom: -30px;
+    margin-top: 5px;
   }
 }

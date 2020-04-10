@@ -22,24 +22,23 @@ export class ContactAdminComponent implements OnInit {
 
      const messageAdmin = new Admin;
 
-     messageAdmin.pseudo = this.formAdmin.value.pseudo;
+     messageAdmin.email = this.formAdmin.value.email;
      messageAdmin.motif = this.formAdmin.value.motif;
      messageAdmin.textarea = this.formAdmin.value.textarea;
 
     this.adminService.contactAdmin(messageAdmin).subscribe(
 
       (data) => {
-        console.log(data);
+        //console.log(data);
         this.svrAlert.addSuccess("Votre recommandation à bien été envoyée !");
         this.router.navigate(['']);
       },
 
       (error) => {
-        console.log(error);
-        this.svrAlert.addError("Champ(s) manquant(s) ! Veuillez réessayer !");
-      },
+        //console.log(error);
+        this.svrAlert.addError("Formulaire incomplet ! Veuillez réessayer !");
+      }
     )
-
     // console.log(messageAdmin);
   }
 
@@ -49,7 +48,7 @@ export class ContactAdminComponent implements OnInit {
 
   formAdmin: FormGroup = new FormGroup
   ({
-    pseudo: new FormControl(""),
+    email: new FormControl(""),
     motif: new FormControl(""),
     textarea: new FormControl(""),
   });

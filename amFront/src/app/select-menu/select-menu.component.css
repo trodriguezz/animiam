@@ -12,8 +12,13 @@
   align-items: center;
 }
 
-#food-select {
-  margin-top: 5px;
+.pet-select {
+  margin-top: 45px;
+  margin-bottom: 5px;
+}
+
+.submit {
+  margin-top: 50px;
 }
 
 
@@ -34,5 +39,9 @@
   #select {
     height: 295px;
     width: 295px;
+  }
+
+  .pet-select {
+    margin-top: 10px;
   }
 }

@@ -10,8 +10,9 @@ export class LoginService {
   // loginUser(loginUser: Login) {
   //   throw new Error("Method not implemented.");
   // }
-
   constructor(private http: HttpClient) { }
+
+
   loginUser(log: Login) : Observable<Login> {
     return this.http.post<Login>('http://localhost:3000/users', JSON.stringify(log),
     {
@@ -19,5 +20,9 @@ export class LoginService {
     });
 
   }
+
+  // authUser(log: Login) : Observable<Login> {
+  //   return this.http.get<Login>('http://localhost:3000/users');
+  // }
 
 }

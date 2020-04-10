@@ -1,21 +1,17 @@
 <article>
-  <form action="http://pleione.fr/validform/?se+loger=" method="POST">
+  <form (ngSubmit) = "onSubmit()" [formGroup] = "formSelect">
     <div id="select">
-      <select name="pet" id="pet-select">
+      <label>Sélection</label>
+      <select name="pet" class="pet-select" formControlName="animal">
         <option value="">-- Choisir un animal --</option>
-        <!-- <option value="chat">Chat</option>
-        <option value="chien">Chien</option> -->
-        <option  *ngFor= "let animal of animaux" value= "{{animal._id}}">{{ animal.type }}</option>
+        <option *ngFor= "let animal of animaux">{{ animal.type }}</option>
       </select>
-      <select name="food" id="food-select">
+      <select name="food" formControlName="aliment">
         <option value="">-- Choisir un aliment --</option>
-        <option></option>
-        <!-- <option value="fruit">Fruit</option>
-        <option value="legume">Légume</option>
-        <option value="viande">Viande</option>
-        <option value="poisson">Poisson</option> -->
+        <option *ngFor= "let aliment of aliments">{{ aliment.type }}</option>
       </select>
-      <a href="" routerLink="/table"><input type="submit" value="Miam !"></a>
+      <!-- <a routerLink="/table"><input type="submit" value="Miam !"></a> -->
+      <input type="submit" class="submit" value="Miam !">
     </div>
   </form>
 </article>

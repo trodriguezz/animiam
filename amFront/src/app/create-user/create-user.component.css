@@ -13,13 +13,12 @@
 }
 
 .label {
-  margin-top: 20px;
   margin-bottom: 20px;
   color: black;
 }
 
 .btnsubmit {
-  margin-top: -30px;
+  margin-top: 18px;
 }
 
 .input {
@@ -48,12 +47,10 @@
 
   .label {
     font-size: 25px;
-    margin-top: -10px;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
   }
 
   .btnsubmit {
-    margin-top: -40px;
-    margin-bottom: 0px;
+    margin-top: 8px;
   }
 }

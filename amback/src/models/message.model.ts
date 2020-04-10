@@ -13,7 +13,7 @@ export class Message extends Entity {
     type: 'string',
     required: true,
   })
-  pseudo: string;
+  email: string;
 
   @property({
     type: 'string',

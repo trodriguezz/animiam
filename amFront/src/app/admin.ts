@@ -1,6 +1,6 @@
 export class Admin {
     _id?: string;
-    pseudo?: string;
+    email?: string;
     motif?: string;
     textarea?: string;
 }

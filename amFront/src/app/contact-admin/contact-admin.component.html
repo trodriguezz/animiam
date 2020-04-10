@@ -1,21 +1,17 @@
 <article>
-    <form (ngSubmit) = "onSubmit()" [formGroup] = "formAdmin">
-       <div id="contactForm">
-          <label id="labelContact">Contact</label><br />
-          <div id="loginMotif">
-             <input type="text" placeholder=" Email ou login" name="username" formControlName="pseudo">
-             <select name="motif" id="motif" formControlName="motif">
-                <option value="" >-- Motif --</option>
-                <option value="bug" >Signaler un bug</option>
-                <option  value="recommandation" >Recommandation</option>
-                <option value="question">Question</option>
-                <option value="autre">Autre</option>
-             </select>
-          </div><br/>
-          <textarea name="textarea" id="textarea" cols="47" rows="20" placeholder="Votre message ici" formControlName="textarea"></textarea>
-          <div id="submitContact">
-             <input type="submit" id="submit" value="ENVOYER">
-          </div>
-       </div>
-    </form>
+  <form (ngSubmit)="onSubmit()" [formGroup]="formAdmin">
+    <div id="contactForm">
+      <label id="labelContact">Contact</label>
+        <input type="text" placeholder="email" name="email" formControlName="email">
+        <select name="motif" id="motif" formControlName="motif">
+          <option value="">-- Motif --</option>
+          <option value="bug">Signaler un bug</option>
+          <option value="recommandation">Recommandation</option>
+          <option value="question">Question</option>
+          <option value="autre">Autre</option>
+        </select>
+        <textarea name="textarea" id="textarea" cols="47" rows="20" placeholder="Votre message ici" formControlName="textarea"></textarea>
+        <input id="submitContact" type="submit" value="ENVOYER">
+      </div>
+  </form>
 </article>
