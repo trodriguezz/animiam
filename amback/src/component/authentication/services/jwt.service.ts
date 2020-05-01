@@ -6,8 +6,6 @@ import { HttpErrors, RestBindings } from '@loopback/rest';
 import { sign , verify } from "jsonwebtoken";
 import { Request } from "express-serve-static-core";
 //
-//import { UserProfileCustom } from '../class/UserProfilCustom';
-import { AddressInfo } from 'net';
 import { TokenNS } from '../types';
 
 //const signAsync = promisify(sign);
@@ -65,14 +63,14 @@ export class JwtService implements TokenService {
 
       userProfile = this.getInfoToken(decryptedToken);
 
-      const addQury: AddressInfo = this.request.connection.address() as AddressInfo;
-      console.log(addQury)
+      // const addQury: AddressInfo = this.request.connection.address() as AddressInfo;
+      // console.log(addQury)
 
-      if (addQury.address !== decryptedToken.add.address) {
-        throw new HttpErrors.Unauthorized(
-          `erreur`,
-        );
-      }
+      // if (addQury.address !== decryptedToken.add.address) {
+      //   throw new HttpErrors.Unauthorized(
+      //     `erreur`,
+      //   );
+      // }
 
     } catch (error) {
       throw new HttpErrors.Unauthorized(

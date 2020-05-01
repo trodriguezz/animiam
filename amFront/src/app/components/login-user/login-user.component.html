@@ -1,0 +1,11 @@
+<article>
+  <form (ngSubmit)="onSubmit()" [formGroup]="formLogin">
+    <div id="loginForm">
+      <label>Compte</label>
+      <input class="input" type="text" placeholder="login / email" name="login" formControlName="pseudo"/>
+      <input type="password" placeholder="mot de passe" name="password" formControlName="password"/>
+      <input type="submit" id='submit' value="SE CONNECTER">
+      <input type="button" class="inscription" routerLink="/create" value="INSCRIPTION">
+    </div>
+  </form>
+</article>

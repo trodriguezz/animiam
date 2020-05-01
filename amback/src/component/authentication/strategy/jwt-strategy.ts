@@ -14,7 +14,7 @@ export class JWTStrategy implements AuthenticationStrategy{
     }
 
     //
-    // utilitaire d'extraction du JWT
+    // Utilitaire d'extraction du JWT
     //
     extractCredentials(request: Request): string {
         if (!request.headers.authorization) {
@@ -29,7 +29,7 @@ export class JWTStrategy implements AuthenticationStrategy{
           );
         }
 
-        //split the string into 2 parts: 'Bearer ' and the `xxx.yyy.zzz`
+        // split the string into 2 parts: 'Bearer ' and the `xxx.yyy.zzz`
         const parts = authHeaderValue.split(' ');
         if (parts.length !== 2)
           throw new HttpErrors.Unauthorized(
@@ -40,7 +40,7 @@ export class JWTStrategy implements AuthenticationStrategy{
         return token;
       }
 
-    // methode d'autentification
+    // Méthode d'authentification
     async authenticate(request: Request<ParamsDictionary>): Promise<UserProfile | undefined> {
         const token: string = this.extractCredentials(request);
         console.log(`get value token ${token}`);

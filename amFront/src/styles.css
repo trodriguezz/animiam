@@ -16,16 +16,16 @@ article {
 
 label {
   font-family: 'Ultra', serif;
-  font-size: 30px;
   color: black;
+  font-size: 30px;
 }
 
 input {
   width: 350px;
-  font-size: 20px;
   color: snow;
   background-color: black;
   text-align: center;
+  font-size: 20px;
 }
 
 input[type="submit"] {
@@ -34,18 +34,18 @@ input[type="submit"] {
   color: snow;
   height: 80px;
   width: 220px;
-  font-size: 20px;
   border-radius: 15px;
+  font-size: 20px;
 }
 
 select,
 option {
   width: 350px;
-  font-size: 20px;
   color: snow;
   background-color: black;
   text-align-last: center;
   text-align: center;
+  font-size: 20px;
 }
 
 
@@ -59,8 +59,8 @@ option {
   }
 
   input {
-    width: 320px;
     height: 35px;
+    width: 320px;
     font-size: 28px;
   }
 
@@ -72,8 +72,8 @@ option {
 
   select,
   option {
-    width: 320px;
     height: 35px;
+    width: 320px;
     font-size: 25px;
   }
 }
@@ -87,8 +87,8 @@ option {
   }
 
   input {
-    width: 220px;
     height: 25px;
+    width: 220px;
     font-size: 20px;
   }
 

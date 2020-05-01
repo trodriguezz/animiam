@@ -8,7 +8,7 @@ import { BindingKey } from '@loopback/context';
 // import { TokenService, UserService } from '@loopback/authentication';
 import { TokenService, UserService } from '@loopback/authentication';
 import { User } from './models';
-import { AuthData } from './class/authData';
+import { Authentication } from './class/authentication.class';
 // import {User} from './models';
 // import {Credentials} from './repositories';
 
@@ -37,7 +37,7 @@ export namespace TokenServiceBindings {
 } */
 
 export namespace UserServiceBindings {
-  export const USER_SERVICE = BindingKey.create<UserService<User, AuthData>>(
+  export const USER_SERVICE = BindingKey.create<UserService<User, Authentication>>(
     'services.user.service',
   );
 }

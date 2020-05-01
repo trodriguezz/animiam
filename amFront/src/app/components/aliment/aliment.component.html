@@ -1,0 +1,12 @@
+<th>{{ foodId }}</th>
+
+<td>{{ foodName }}</td>
+
+<td [ngStyle]="{color: getColor()}">{{ foodStatus }}</td>
+
+<!-- <td [ngClass]="{color: getColor()}">{{ foodStatus }}</td> -->
+
+<!-- <td [ngClass]="{'glyphicon glyphicon-ok': true,
+'glyphicon glyphicon-ok': foodStatus === 'ok',
+'glyphicon glyphicon-remove': foodStatus === 'ko' }"
+></td> -->

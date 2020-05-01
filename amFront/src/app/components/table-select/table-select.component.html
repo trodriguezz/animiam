@@ -1,0 +1,47 @@
+<!-- TODO -->
+<article>
+  <div class="boxTable">
+      <caption>Résultats</caption>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td>
+              <app-aliment *ngFor="let aliment of aliments" [foodName]="aliment.name"></app-aliment>
+            </td>
+            <td>
+              <app-aliment *ngFor="let aliment of aliments" [foodStatus]="aliment.status"></app-aliment>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</article>
+
+
+<!-- ** BOOTSTRAP VERSION ** -->
+<!-- <article>
+  <table class="table table-dark text-center">
+    <thead>
+      <tr>
+        <th scope="col">Nom</th>
+        <th scope="col">Recommandé</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+           <app-aliment
+           *ngFor="let aliment of aliments"
+           [foodName]="aliment.name"
+           ></app-aliment>
+        </td>
+        <td class="text-left">
+           <app-aliment
+           *ngFor="let aliment of aliments"
+           [foodStatus]="aliment.status"
+           ></app-aliment>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</article> -->

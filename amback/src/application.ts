@@ -60,48 +60,48 @@ export class AmbackApplication extends BootMixin(
     this.bind(UserServiceBindings.USER_SERVICE).toClass(UserAmService);
   }
 
-  async migrateSchema(option?: SchemaMigrationOptions) {
-    await super.migrateSchema(option);
-    console.log("script d'installation/migration");
+  // async migrateSchema(option?: SchemaMigrationOptions) {
+  //   await super.migrateSchema(option);
+  //   console.log("script d'installation/migration");
 
-    let repoUser = await this.getRepository(UserRepository);
+  //   let repoUser = await this.getRepository(UserRepository);
 
-    if (!repoUser) {
-      console.log("Pas de repo User");
-      return; // TODO gestion erreur migrate
-    }
+  //   if (!repoUser) {
+  //     console.log("Pas de repo User");
+  //     return; // TODO gestion erreur migrate
+  //   }
 
-    let userAdmin = await repoUser.findOne({
-      where : {
-        pseudo : "admin"
-      }
-    });
+  //   let userAdmin = await repoUser.findOne({
+  //     where : {
+  //       pseudo : "admin"
+  //     }
+  //   });
 
-    if (userAdmin) {
-      console.log("Admin déjà créé");
-      return;
-    }
+  //   if (userAdmin) {
+  //     console.log("Admin déjà créé");
+  //     return;
+  //   }
 
-    // ** RECHERCHE SERVICE DE HASH ** //
-    const srvHash = await this.get(PasswordNS.PASSWORD_HASHER); // async
+  //   // ** RECHERCHE SERVICE DE HASH ** //
+  //   const srvHash = await this.get(PasswordNS.PASSWORD_HASHER); // async
 
-    if (!srvHash) {
-      console.log("Pas de serive de hash");
-      return; // TODO gestion erreur migrate
-    }
+  //   if (!srvHash) {
+  //     console.log("Pas de serive de hash");
+  //     return; // TODO gestion erreur migrate
+  //   }
 
-    userAdmin = new User();
-    userAdmin.pseudo = "admin";
-    userAdmin.email = "admin@ici.com";
-    userAdmin.prenom = "admin";
-    userAdmin.nom = "admin";
-    userAdmin.password = await srvHash.hashPassword("admin1234");
+  //   userAdmin = new User();
+  //   userAdmin.pseudo = "admin";
+  //   userAdmin.email = "admin@ici.com";
+  //   userAdmin.prenom = "admin";
+  //   userAdmin.nom = "admin";
+  //   userAdmin.password = await srvHash.hashPassword("admin1234");
 
-    const afterWrite = await repoUser.create(userAdmin);
+  //   const afterWrite = await repoUser.create(userAdmin);
 
-    if (!afterWrite) {
-      console.log("Erreur création admin");
-    }
+  //   if (!afterWrite) {
+  //     console.log("Erreur création admin");
+  //   }
 
-  }
+  // }
 }
