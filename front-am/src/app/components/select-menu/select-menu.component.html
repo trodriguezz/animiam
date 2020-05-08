@@ -1,0 +1,20 @@
+<article>
+  <!-- <form> -->
+    <form (ngSubmit) = "onSubmit()" [formGroup] = "formSelect">
+    <div id="select">
+      <label>Sélection</label>
+      <!-- <select name="" class="pet"> -->
+        <select name="" class="pet" formControlName="animal">
+        <option value="">-- Choisir un animal --</option>
+        <option *ngFor="let animal of animaux" value="{{animal.type}}">{{ animal.type }} </option>
+      </select>
+      <!-- <select name="" class="food"> -->
+        <select name="" class="food" formControlName="aliment">
+        <option value="">-- Choisir un aliment --</option>
+        <option *ngFor="let aliment of aliments" value="{{aliment}}">{{ aliment }}</option>
+      </select>
+      <!-- <a routerLink="/table"><input type="submit" value="VALIDER"></a> -->
+      <input [disabled]="!formSelect.valid" type="submit" class="submit" value="VALIDER">
+    </div>
+  </form>
+</article>
