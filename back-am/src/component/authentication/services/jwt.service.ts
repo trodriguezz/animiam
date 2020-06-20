@@ -19,9 +19,9 @@ export class JwtService implements TokenService {
 
   constructor(
     @inject(TokenNS.TOKEN_SECRET)
-    private jwtSecret: string,
+    private jwtSecret: string, // signature token
     @inject(TokenNS.TOKEN_EXPIRES_IN)
-    private jwtExpiresIn: number,
+    private jwtExpiresIn: number, // date expiration token
     @inject(RestBindings.Http.REQUEST) public request: Request
   ) { }
 
@@ -30,11 +30,11 @@ export class JwtService implements TokenService {
    *
    * @param decryptedToken
    */
-  public getInfoToken(decryptedToken: any): UserProfile {
+  public getInfoToken(decryptedToken: any): UserProfile { // récupére infos jeton
 
-    let userProfile: UserProfile;
+    let userProfile: UserProfile; // new instance userProfile
 
-    userProfile = Object.assign(
+    userProfile = Object.assign(  // assigne infos du token dans l'instance userProfile
       { [securityId]: decryptedToken.id },
       { id: '', name: '', profile: '' },
       { id: decryptedToken.id, name: decryptedToken.name, profile: decryptedToken.profile }

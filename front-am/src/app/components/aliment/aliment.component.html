@@ -1,9 +1,0 @@
-<th>{{ foodId }}</th>
-
-<td>{{ foodName }}</td>
-
-<!-- directive ngStyle = prend en compte param fonction getColor et insère icônes -->
-<td [ngStyle]="{color: getColor()}">
-    <span *ngIf="foodStatus === 'ok'" ><i class="fas fa-thumbs-up"></i></span>
-    <span *ngIf="foodStatus === 'ko'" ><i class="fas fa-thumbs-down"></i></span>
-</td>

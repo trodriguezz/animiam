@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AnimauxService } from '../animaux/animaux.service';
+import { Aliment } from 'src/app/class/aliment/aliment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class AlimentService {
   typeOfAliments: any[] = [];
   resultSearch: any[] = [];
 
-  foodData: any [];
+  foodData: Aliment[];
 
   filterAliment: string;
   filterAnimal: string;
@@ -22,12 +23,14 @@ export class AlimentService {
   constructor(private http: HttpClient, private srvAnimaux: AnimauxService) { }
 
   // Fonction getAllAliment() va se connecter à bdd et récuperer (GET) liste de tous les aliments
-  getAllAliment(): Observable<void> {
-    return this.http.get<any[]>("http://localhost:3000/aliments").pipe(map((data) => {
+  getAllAliment(): Observable<boolean> {
+    return this.http.get<Aliment[]>("http://localhost:3000/aliments").pipe(map((data) => {
       this.foodData = data;
+      console.log("Collection d'aliments récupérée");
+      return true; // données ajouter au service;
+    }
+    ))
   }
-  ))
-}
 
   getAllTypes(): Observable<void> {
     return this.http.get<any[]>("http://localhost:3000/aliments").pipe(map((data) => {
@@ -35,24 +38,24 @@ export class AlimentService {
     }
     ))
   }
-  
-  // supprime les doublons
+
+  // Supprimer les doublons
   removeDuplicates(data) {
-    let unique = [];
-    data.forEach(element => {
-      let type = element.type;
-      if (!unique[type]) {
-        unique[type] = true;
+    let unique = []; // Déclaration d'un nouveau tableau unique
+    data.forEach(element => { // Parcours du tableau de données
+      let type = element.type; // Affectation du type pour chaque element du tableau
+      if (!unique[type]) { // si unique différent du type 
+        unique[type] = true; // alors si valeur true insère la clé dans tableau unique
       }
     });
-    return Object.keys(unique);
+    return Object.keys(unique); // retourne un objet possédant les clés du tableau de string unique
   }
 
   // * Méthode filter
-    // @param data : array, tableau de données
-    // @param max : number, nombre de type d'animaux (récupéré avec la méthode count du service animaux)
-    // @param foodtype : string, type d'aliment
-    // @param animaltype : string, type d'animaux
+  // @param data : array, tableau de données
+  // @param max : number, nombre de type d'animaux (récupéré avec la méthode count du service animaux)
+  // @param foodtype : string, type d'aliment
+  // @param animaltype : string, type d'animaux
 
   filter(data: any[], max: number, foodtype: string, animaltype: string) {
     let filterData = [/* empty */]; // création d'un nouveau tableau vide
@@ -65,7 +68,7 @@ export class AlimentService {
         for (let i = 0; i <= max; i++) {
           // vérifier si type d'animal correspond à animaltype
           if (element.animaux[i] === animaltype) {
-            // si c'est la cas ...
+            // si c'est le cas ...
             // ajouter l'élément au tableau filterData
             filterData.push(element);
           }

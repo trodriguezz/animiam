@@ -1,0 +1,58 @@
+<article>
+
+  <div class="admin">
+    <form [formGroup]="myFormGroup" (ngSubmit)="onSubmit()">
+      <div class="adminBox">
+        <select formControlName="collectionFormName" (change)="selectCollectionOnClick()">
+          <option value="">Choisir une collection</option>
+          <option *ngFor="let collection of collectionsTab" value="{{collection}}">{{collection}}</option>
+        </select>
+
+        <select formControlName="crudFormName" (change)="selectCrudOptionOnClick()">
+          <option value="">Que voulez vous faire ?</option>
+          <option *ngFor="let option of crudOptions" value="{{option}}">{{option}}</option>
+        </select>
+      </div>
+      
+      <!-- * CREATE -->
+      <div class="adminBox" *ngIf="displayForm === 'createAnimalById'">
+        <!-- <select formControlName="animauxFormName">
+          <option value="">Quel animal ?</option>
+          <option *ngFor="let animal of animauxTab" value="{{animal._id}}">{{animal.type}}</option>
+        </select> -->
+        <input type="text" placeholder="Entrer le nom de l'animal" value="Nouvel animal" formControlName="animalCreateFormName" /> <br>
+        <button type="submit" (click)="createAnimalById()">Créer</button>
+      </div>
+
+      <!-- * READ -->
+      <!-- <div *ngIf="displayForm === 'readAnimalById'">
+        <select formControlName="animauxFormName">
+          <option value="">Quel animal ?</option>
+          <option *ngFor="let animal of animauxTab" value="{{animal._id}}">{{animal.type}}</option>
+        </select>
+        <br>
+        <button type="submit" (click)="readAnimalById()">Voir</button>
+      </div> -->
+
+      <!-- * UPDATE -->
+      <div class="adminBox" *ngIf="displayForm === 'updateAnimalById'">
+        <select formControlName="animauxFormName">
+          <option value="">Quel animal ?</option>
+          <option *ngFor="let animal of animauxTab" value="{{animal._id}}">{{animal.type}}</option>
+        </select>
+        <input type="text" value="Nouveau nom" formControlName="animalUpdateFormName" /> <br>
+        <button type="submit" (click)="updateAnimalById()">Modifier</button>
+      </div>
+
+      <!-- * DELETE -->
+      <div class="adminBox" *ngIf="displayForm === 'deleteAnimalById'">
+        <select formControlName="animauxFormName">
+          <option value="">Quel animal ?</option>
+          <option *ngFor="let animal of animauxTab" value="{{animal._id}}">{{animal.type}}</option>
+        </select>
+        <button type="submit" (click)="deleteAnimalById()">Supprimer</button>
+      </div>
+      
+    </form>
+   </div>
+</article>

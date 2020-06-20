@@ -12,8 +12,8 @@ import { Authentication } from './class/authentication.class';
 
 
 export namespace TokenServiceConstants {
-  export const TOKEN_SECRET_VALUE = 'myjwts3cr3t';
-  export const TOKEN_EXPIRES_IN_VALUE = '600';
+  export const TOKEN_SECRET_VALUE = 'myjwts3cr3t'; // Signature / Secret
+  export const TOKEN_EXPIRES_IN_VALUE = '600'; // Durée de validité
 }
 
 export namespace TokenServiceBindings {

@@ -12,7 +12,7 @@ import { Login } from '../../class/login/login';
 })
 export class UserService {
 
-  //!  injection de dépendance, module HttpClient
+  //!  injection dépendances : module HttpClient et service currentUser
   constructor(private http: HttpClient, private currentUser: CurrentUserService) { }
 
   //! createUser() = fonction qui va se connecter à la base de donnée et qui va enregistrer new user dans collection
@@ -23,6 +23,7 @@ export class UserService {
       });
   }
 
+  //! authentification() = fonction qui va comparer les informations saisies avec celles enregistrées en bdd
   authentification(authentification: Login): Observable<Token> {
     return this.http.post<Token>('http://localhost:3000/login', JSON.stringify(authentification),
       {
@@ -35,7 +36,9 @@ export class UserService {
       this.currentUser.pseudo = data.pseudo;
       this.currentUser.prenom = data.prenom;
       this.currentUser.nom = data.nom;
+      this.currentUser.profile = data.profile;
     }
     ));
   }
 }
+

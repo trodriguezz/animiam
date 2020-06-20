@@ -1,0 +1,74 @@
+/** ADMIN FORM **/
+
+select {
+  margin-bottom: 5px;
+}
+
+.admin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid red; */
+}
+
+.adminBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid blue; */
+}
+
+#input {
+  margin-bottom: 10px;
+}
+
+#btnBox {
+  width: 350px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.label {
+  margin-top: 20px;
+}
+
+/** RESPONSIVE DESIGN **/
+
+/** EN DESSOUS DE 660 PX (tablette) **/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+
+  #adminForm {
+    height: 500px;
+    width: 500px;
+  }
+
+  #btnBox {
+    width: 320px;
+  }
+}
+
+/** EN DESSOUS DE 450 PX (smartphone) **/
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+  #adminForm {
+    height: 400px;
+    width: 320px;
+  }
+
+  #btnBox {
+    width: 280px;
+    /* margin-bottom: 30px; */
+  }
+
+  #input {
+    margin-bottom: 5px;
+    width: 280px;
+  }
+
+  .label {
+      margin-top: 30px;
+  }
+}

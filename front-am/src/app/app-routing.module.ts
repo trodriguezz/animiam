@@ -6,6 +6,7 @@ import { ContactAdminComponent } from './components/contact-admin/contact-admin.
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import { SelectMenuComponent } from './components/select-menu/select-menu.component';
 import { TableSelectComponent } from './components/table-select/table-select.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 
 const routes: Routes = [  // Routes = tableau de routes (liens ng)
@@ -14,7 +15,8 @@ const routes: Routes = [  // Routes = tableau de routes (liens ng)
   { path: 'contact', component: ContactAdminComponent},
   { path: 'create', component: CreateUserComponent},
   { path: 'select', component: SelectMenuComponent},
-  { path: 'table', component: TableSelectComponent}
+  { path: 'table', component: TableSelectComponent},
+  { path: 'admin', component: AdminComponent}
 ];
 
 @NgModule({

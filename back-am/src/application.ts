@@ -17,6 +17,7 @@ import { PasswordNS } from './component/password';
 import { User } from './models';
 import { UserAmService } from './services';
 import { UserServiceBindings } from './key';
+import { BackAutorisation } from './component/autorisation';
 
 export class AmbackApplication extends BootMixin(
   ServiceMixin(RepositoryMixin(RestApplication)),
@@ -28,6 +29,10 @@ export class AmbackApplication extends BootMixin(
     this.component(AuthenticationComponent);
     this.component(BackAuthentication);
     this.component(PasswordCmp);
+
+    // Ajout du composant autorisation
+    this.component(AuthenticationComponent);
+    this.component(BackAutorisation);
 
     // Ajout de la strategy
     registerAuthenticationStrategy(this,JWTStrategy);

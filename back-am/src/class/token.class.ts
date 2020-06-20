@@ -5,4 +5,5 @@ export class Token { // ReponseLogin
   public pseudo: string;
   public prenom: string;
   public nom: string;
+  public profile: string;
 }

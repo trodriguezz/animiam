@@ -39,6 +39,13 @@ export class User extends Entity {
   })
   password: string;
 
+  @property({
+    type: 'string',
+    generated: true,
+    default: 'user',
+  })
+  profile: string;
+
   // Define well-known properties here
 
   // Indexer property to allow additional data

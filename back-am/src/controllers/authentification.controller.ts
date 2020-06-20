@@ -24,11 +24,12 @@ export class AuthentificationController {
    ) { }
 
 
-   @post("/login")
+   @post("/login") // appel de la méthode post vers l'URL suivante ("/login")
    public async authentication(@requestBody() authentication: Authentication): Promise<Token> {
       // Vérifier si l'utilisateur se connecte à l'aide de son pseudo ou de son email
       console.log("authentication :", authentication);
       
+      // Vérifier si user se connecte avec son email ou pseudo, retourne données user
       const userTemp = await this.userService.verifyCredentials(authentication);
       console.log(userTemp, "authentication");
       
@@ -62,8 +63,11 @@ export class AuthentificationController {
       rep.email = userTemp.email;
       rep.prenom = userTemp.prenom;
       rep.nom = userTemp.nom;
+      rep.profile = userTemp.profile;
 
       // Retourner le Token
       return rep;
    }
+
+   
 }

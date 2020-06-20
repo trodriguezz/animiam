@@ -1,0 +1,11 @@
+p, admin, AnimauxController.create, execute
+p, admin, AnimauxController.updateAll, execute
+p, admin, AnimauxController.updateById, execute
+p, admin, AnimauxController.replaceById, execute
+p, admin, AnimauxController.deleteById, execute
+
+p, admin, AlimentController.create, execute
+p, admin, AlimentController.updateAll, execute
+p, admin, AlimentController.updateById, execute
+p, admin, AlimentController.replaceById, execute
+p, admin, AlimentController.deleteById, execute

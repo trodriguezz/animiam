@@ -4,7 +4,7 @@ label {
   margin-bottom: 5px;
 }
 
-#loginForm {
+.loginForm {
   height: 400px;
   width: 400px;
   border-radius: 15%;
@@ -36,13 +36,23 @@ label {
   margin-bottom: 5px;
 }
 
+.deco {
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+
+.admin {
+  margin-top: 5px;
+}
+
+
 
 /** RESPONSIVE DESIGN **/
 
 /** EN DESSOUS DE 660 PX (tablette) **/
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
 
-  #loginForm {
+  .loginForm {
     height: 500px;
     width: 500px;
   }
@@ -57,7 +67,7 @@ label {
 /** EN DESSOUS DE 450 PX (smartphone) **/
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 
-  #loginForm {
+  .loginForm {
     height: 295px;
     width: 295px;
   }

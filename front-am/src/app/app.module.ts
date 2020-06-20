@@ -16,7 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { AlertComponent } from './components/alert/alert.component';
 import { SecurityInterceptorService } from './services/security-interceptor/security-interceptor.service';
-import { AlimentComponent } from './components/aliment/aliment.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 
 @NgModule({
@@ -30,7 +30,7 @@ import { AlimentComponent } from './components/aliment/aliment.component';
     SelectMenuComponent,
     TableSelectComponent,
     AlertComponent,
-    AlimentComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +40,7 @@ import { AlimentComponent } from './components/aliment/aliment.component';
     ReactiveFormsModule,
     AlertModule.forRoot()
   ],
-  providers: [
+  providers: [ // Intercepte les requêtes avant d'être envoyé au back
     {
       provide: HTTP_INTERCEPTORS,
       useClass: SecurityInterceptorService,

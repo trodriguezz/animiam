@@ -3,7 +3,6 @@ import { AnimauxService } from '../../services/animaux/animaux.service';
 import { AlimentService } from '../../services/aliment/aliment.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Select } from '../../class/select/select';
 import { element } from 'protractor';
 
 @Component({
@@ -16,8 +15,8 @@ export class SelectMenuComponent implements OnInit {
 
   constructor(private svrAnimaux: AnimauxService, private svrAliment: AlimentService, private router: Router) { }
 
-  animaux: any = [];
-  aliments: any = [];
+  public animaux: any = [];
+  public aliments: any = [];
 
   formSelect: FormGroup = new FormGroup({
     animal: new FormControl("", Validators.required), // validors = champs requis
@@ -52,7 +51,28 @@ export class SelectMenuComponent implements OnInit {
     this.svrAliment.filterAliment = this.formSelect.value.aliment;
     console.log(this.svrAliment.filterAliment);
 
-    this.router.navigate(['table']);
+    // récupérer les animaux
+    this.svrAnimaux.countAnimaux().subscribe(
+      (rep1) => {
+        // récupérer les aliments (foodData)
+        this.svrAliment.getAllAliment().subscribe(
+          (rep2) => {
+            console.log("début du filtre :", this.aliments);
+            // filtre foodData
+            this.svrAliment.resultSearch = this.svrAliment.filter(
+              this.svrAliment.foodData,
+              this.svrAnimaux.nbrAnimaux,
+              this.svrAliment.filterAliment,
+              this.svrAliment.filterAnimal);
+          }
+        );
+        this.router.navigate(['table']);
+      },
+      (error) => {
+        console.log(error);
+      }
+    )
+
   }
 
 }

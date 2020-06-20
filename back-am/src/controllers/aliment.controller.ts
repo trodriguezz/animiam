@@ -17,30 +17,36 @@ import {
   del,
   requestBody,
 } from '@loopback/rest';
-import {Aliment} from '../models';
-import {AlimentRepository} from '../repositories';
+import { Aliment } from '../models';
+import { AlimentRepository } from '../repositories';
+import { authenticate } from '@loopback/authentication';
+import { authorize } from '@loopback/authorization';
 
 export class AlimentController {
   constructor(
     @repository(AlimentRepository)
-    public alimentRepository : AlimentRepository,
-  ) {}
+    public alimentRepository: AlimentRepository,
+  ) { }
 
   @post('/aliments', {
     responses: {
       '200': {
         description: 'Aliment model instance',
-        content: {'application/json': {schema: getModelSchemaRef(Aliment)}},
+        content: { 'application/json': { schema: getModelSchemaRef(Aliment) } },
       },
     },
   })
+  @authenticate('jwt') // appelé avant async
+  @authorize({})
+
+
   async create(
     @requestBody({
       content: {
         'application/json': {
           schema: getModelSchemaRef(Aliment, {
             title: 'NewAliment',
-            
+
           }),
         },
       },
@@ -54,7 +60,7 @@ export class AlimentController {
     responses: {
       '200': {
         description: 'Aliment model count',
-        content: {'application/json': {schema: CountSchema}},
+        content: { 'application/json': { schema: CountSchema } },
       },
     },
   })
@@ -72,7 +78,7 @@ export class AlimentController {
           'application/json': {
             schema: {
               type: 'array',
-              items: getModelSchemaRef(Aliment, {includeRelations: true}),
+              items: getModelSchemaRef(Aliment, { includeRelations: true }),
             },
           },
         },
@@ -89,7 +95,7 @@ export class AlimentController {
     responses: {
       '200': {
         description: 'Aliment PATCH success count',
-        content: {'application/json': {schema: CountSchema}},
+        content: { 'application/json': { schema: CountSchema } },
       },
     },
   })
@@ -97,7 +103,7 @@ export class AlimentController {
     @requestBody({
       content: {
         'application/json': {
-          schema: getModelSchemaRef(Aliment, {partial: true}),
+          schema: getModelSchemaRef(Aliment, { partial: true }),
         },
       },
     })
@@ -113,7 +119,7 @@ export class AlimentController {
         description: 'Aliment model instance',
         content: {
           'application/json': {
-            schema: getModelSchemaRef(Aliment, {includeRelations: true}),
+            schema: getModelSchemaRef(Aliment, { includeRelations: true }),
           },
         },
       },
@@ -138,7 +144,7 @@ export class AlimentController {
     @requestBody({
       content: {
         'application/json': {
-          schema: getModelSchemaRef(Aliment, {partial: true}),
+          schema: getModelSchemaRef(Aliment, { partial: true }),
         },
       },
     })

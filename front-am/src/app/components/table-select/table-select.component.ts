@@ -9,31 +9,21 @@ import { AnimauxService } from 'src/app/services/animaux/animaux.service';
 })
 export class TableSelectComponent implements OnInit {
 
-  constructor(private srvAliments: AlimentService, private svrAnimaux: AnimauxService) { }
-
-  aliments = [];
+  constructor(public srvAliments: AlimentService, public svrAnimaux: AnimauxService) { }
 
   ngOnInit() {
 
-    // récupérer nbr animaux
-    this.svrAnimaux.countAnimaux().subscribe(
-      (rep1) => {
-        // récupérer les aliments (foodData)
-        this.srvAliments.getAllAliment().subscribe(
-          (rep2) => {
-            console.log("début du filtre :", this.aliments);
-            // filtrer foodData
-            this.aliments = this.srvAliments.filter(
-              this.srvAliments.foodData,
-              this.svrAnimaux.nbrAnimaux,
-              this.srvAliments.filterAliment,
-              this.srvAliments.filterAnimal);
-          }
-        );
-      },
-      (error) => {
-        console.log(error);
-      }
-    )
+    console.log(this.srvAliments.resultSearch);
+
+    
+  }
+
+  //* fonction getColor() = si status aliment "ok" alors vert
+  getColor(status) {
+    if (status === "ok") {
+      return "green";
+    } else if (status === "ko") {
+      return "red";
+    }
   }
 }

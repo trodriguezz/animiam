@@ -16,8 +16,8 @@ export class CurrentUserService {
 
    // Lire les infos présentes dans la sessionStorage
    private readInfo() {
-      if (window.sessionStorage.getItem("token")) {
-         this.token = JSON.parse(window.sessionStorage.getItem("token"));
+      if (window.sessionStorage.getItem("token")) { // getItem : renvoie la valeur actuelle associée à la clé donnée
+         this.token = JSON.parse(window.sessionStorage.getItem("token")); // parse : convertit une chaîne JSON en objet.
       }
    }
 
@@ -48,9 +48,9 @@ export class CurrentUserService {
    public get isLogged(): boolean {
       this.readInfo();
       if (this.token.token) { // Appel du Getter pour la gestion du sessionStorage
-         return true;
+         return true;  // utilisateur connecté
       } else {
-         return false;
+         return false; // utilisateur non connecté
       }
    }
 
@@ -66,13 +66,13 @@ export class CurrentUserService {
       return this.token.id;
    }
 
-   // Définir le email de l'utilisateur connecté
+   // Définir l'email de l'utilisateur connecté
    public set email(v: string) {
       this.token.email = v;
       this.saveInfo();
    }
 
-   // Obtenir le email de l'utilisateur connecté
+   // Obtenir l'email de l'utilisateur connecté
    public get email() {
       this.readInfo();
       return this.token.email;
@@ -97,6 +97,7 @@ export class CurrentUserService {
       this.saveInfo();
    }
 
+   // Obtenir le prenom de l'utilisateur connecté
    public get prenom() {
       this.readInfo();
       return this.token.prenom;
@@ -114,6 +115,18 @@ export class CurrentUserService {
     return this.token.nom;
  }
 
+   // Définit le type de profil utilisateur
+   public set profile(v: string) {
+      this.token.profile = v;
+      this.saveInfo();
+   }
+  
+   // Savoir quel est le type de profil utilisateur
+   public get profile() {
+      this.readInfo();
+      return this.token.profile;
+   }
+
    // Déconnexion de l'utilisateur
    public reset() {
       this.resetInfo(); // Supprimer les infos de la sessionStorage
@@ -128,7 +141,7 @@ export class CurrentUserService {
    // Modifier les infos de l'utilisateur
    public updateUserInfo(userId: string, newInfo: any) {
       return this.http.patch<void>(
-         `${environment.urlBase}/users/${userId}`,
+         `${environment.urlBase}/users/${userId}`, // environment.urlBase : nom de domaine du futur environnement
          JSON.stringify(newInfo),
          { headers: new HttpHeaders().set("Content-Type", "application/json") });
    }

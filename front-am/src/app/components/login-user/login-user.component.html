@@ -1,11 +1,22 @@
-<article>
+<article *ngIf='svrCurrent.isLogged === false'>
   <form (ngSubmit)="onSubmit()" [formGroup]="formLogin">
-    <div id="loginForm">
+    <div class="loginForm">
       <label>Compte</label>
-      <input class="input" type="text" placeholder="login / email" name="login" formControlName="pseudo"/>
-      <input type="password" placeholder="mot de passe" name="password" formControlName="password"/>
-      <input type="submit" id='submit' value="SE CONNECTER">
-      <input type="button" class="inscription" routerLink="/create" value="INSCRIPTION">
+      <input class="input" type="text" placeholder="login / email" name="login" formControlName="pseudo" />
+      <input type="password" placeholder="mot de passe" name="password" formControlName="password" />
+      <button type="submit" id='submit'>SE CONNECTER</button>
+      <button type="button" class="inscription" routerLink="/create">INSCRIPTION</button>
     </div>
   </form>
+</article>
+
+
+<article *ngIf='svrCurrent.isLogged'>
+    <div class="loginForm">
+      <label>Bienvenue</label>
+      <h2>{{svrCurrent.pseudo}}</h2>
+      <button type="button" routerLink="/setting">PARAMÉTRES</button>
+      <button type="button" routerLink="/admin" class="admin" *ngIf='svrCurrent.profile === "admin"'>ADMIN</button>
+      <button type="button" style="color: red;" class="deco" (click)='unLogged()'>DÉCONNEXION</button>
+    </div>
 </article>

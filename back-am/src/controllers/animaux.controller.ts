@@ -120,7 +120,7 @@ export class AnimauxController {
     },
   })
   async findById(
-    @param.path.number('id') id: number,
+    @param.path.string('id') id: string,
     @param.query.object('filter', getFilterSchemaFor(Animaux)) filter?: Filter<Animaux>
   ): Promise<Animaux> {
     return this.animauxRepository.findById(id, filter);
@@ -134,7 +134,7 @@ export class AnimauxController {
     },
   })
   async updateById(
-    @param.path.number('id') id: number,
+    @param.path.string('id') id: string,
     @requestBody({
       content: {
         'application/json': {
@@ -155,7 +155,7 @@ export class AnimauxController {
     },
   })
   async replaceById(
-    @param.path.number('id') id: number,
+    @param.path.string('id') id: string,
     @requestBody() animaux: Animaux,
   ): Promise<void> {
     await this.animauxRepository.replaceById(id, animaux);
@@ -168,7 +168,7 @@ export class AnimauxController {
       },
     },
   })
-  async deleteById(@param.path.number('id') id: number): Promise<void> {
+  async deleteById(@param.path.string('id') id: string): Promise<void> {
     await this.animauxRepository.deleteById(id);
   }
 }

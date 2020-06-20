@@ -7,7 +7,7 @@
 }
 
 article {
-  height: calc(100vh - 150px);
+  min-height: calc(100vh - 150px);
   /* calcule taille de l'écran, moins hauteur du nav) */
   display: flex;
   justify-content: center;
@@ -28,7 +28,7 @@ input {
   font-size: 20px;
 }
 
-input[type="submit"] {
+button {
   font-family: 'Ultra', serif;
   background-color: black;
   color: snow;
@@ -64,7 +64,7 @@ option {
     font-size: 28px;
   }
 
-  input[type="submit"] {
+  button {
     height: 130px;
     width: 250px;
     font-size: 25px;
@@ -92,7 +92,7 @@ option {
     font-size: 20px;
   }
 
-  input[type="submit"] {
+  button {
     height: 80px;
     width: 200px;
     font-size: 18px;

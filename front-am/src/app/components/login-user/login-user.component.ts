@@ -4,6 +4,7 @@ import { Login } from '../../class/login/login';
 import { Router } from '@angular/router';
 import { AlertService } from '../../services/alert/alert.service';
 import { UserService } from '../../services/user/user.service';
+import { CurrentUserService } from 'src/app/services/current-user/current-user.service';
 
 @Component({
   selector: 'app-login-user',
@@ -13,17 +14,23 @@ import { UserService } from '../../services/user/user.service';
 
 export class LoginUserComponent implements OnInit {
 
+  formLogin: FormGroup = new FormGroup({
+    password: new FormControl(""),
+    pseudo: new FormControl("")
+
+  });
+
   //! Constructeur / injection de dépendance
-  constructor(private svrUser: UserService, private router: Router, public svrAlert: AlertService) { }
+  constructor(private svrUser: UserService, private router: Router, public svrAlert: AlertService, public svrCurrent: CurrentUserService) { }
 
   //! Fonction appelée lors de l'initialisation du cycle de vie du composant
   ngOnInit() {
   }
 
-  //! fonction onSubmit() appelé lors du submit du formLogin
+  //! fonction onSubmit() appelée lors du submit du formLogin
   onSubmit() {
 
-    // Création new instance (= new objet) Login et affectation à let loginUser
+    // Création new instance Login et affectation à loginUser
     let loginUser = new Login();
     
     loginUser.pseudo = this.formLogin.value.pseudo.trim(); // trim() = vérifie si espaces avant et après saisie
@@ -33,7 +40,7 @@ export class LoginUserComponent implements OnInit {
          loginUser.email = true;
       }
 
-    loginUser.password = this.formLogin.value.password;
+    loginUser.password = this.formLogin.value.password.trim();
 
     this.svrUser.authentification(loginUser).subscribe(
       (dataReponse) => {
@@ -48,9 +55,9 @@ export class LoginUserComponent implements OnInit {
     //console.log(loginUser);
   }
 
-  formLogin: FormGroup = new FormGroup({
-    password: new FormControl(""),
-    pseudo: new FormControl("")
+  unLogged() {
+    this.svrCurrent.reset();
+  }
 
-  });
+ 
 }
